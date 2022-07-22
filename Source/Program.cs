@@ -31,6 +31,7 @@ namespace ItemEditor
 
         /// <summary>
         /// The main entry point for the application.
+        /// Test; A pound of flesh -- Dramia
         /// </summary>
         [STAThread]
         static void Main()
