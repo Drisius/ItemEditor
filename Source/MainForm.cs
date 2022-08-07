@@ -445,7 +445,7 @@ namespace ItemEditor
         {
             this.toolTip.SetToolTip(this.newItemButton, "Create Item");
             this.toolTip.SetToolTip(this.duplicateItemButton, "Duplicate Item");
-            this.toolTip.SetToolTip(this.reloadItemButton, "Reaload Item");
+            this.toolTip.SetToolTip(this.reloadItemButton, "Reload Item");
             this.toolTip.SetToolTip(this.findItemButton, "Find Item");
         }
 
