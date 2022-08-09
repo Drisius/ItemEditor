@@ -91,6 +91,7 @@
             this.editCreateItemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editDuplicateItemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editReloadItemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDeleteLastItemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.editFindItemMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.separatorMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
@@ -710,6 +711,7 @@
             this.editCreateItemMenuItem,
             this.editDuplicateItemMenuItem,
             this.editReloadItemMenuItem,
+            this.editDeleteLastItemMenuItem,
             this.separatorMenuItem4,
             this.editCreateMissingItemsMenuItem,
             this.toolStripSeparator2,
@@ -747,6 +749,16 @@
             this.editReloadItemMenuItem.Size = new System.Drawing.Size(193, 22);
             this.editReloadItemMenuItem.Text = "&Reload Item";
             this.editReloadItemMenuItem.Click += new System.EventHandler(this.EditReloadItemMenuItem_Click);
+            // 
+            // editDeleteLastItemMenuItem
+            // 
+            this.editDeleteLastItemMenuItem.Enabled = false;
+            this.editDeleteLastItemMenuItem.Image = global::ItemEditor.Properties.Resources.DeleteIcon;
+            this.editDeleteLastItemMenuItem.Name = "editDeleteLastItemMenuItem";
+            this.editDeleteLastItemMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.editDeleteLastItemMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.editDeleteLastItemMenuItem.Text = "&Delete Last Item";
+            this.editDeleteLastItemMenuItem.Click += new System.EventHandler(this.EditDeleteLastItemMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1298,6 +1310,7 @@
         private System.Windows.Forms.ToolStripMenuItem editMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editDuplicateItemMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editReloadItemMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDeleteLastItemMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editCreateItemMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editFindItemMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editCreateMissingItemsMenuItem;

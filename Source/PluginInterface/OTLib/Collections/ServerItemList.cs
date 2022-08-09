@@ -84,5 +84,10 @@ namespace OTLib.Collections
             Items.Clear();
             MaxId = 100;
         }
+
+        public void LowerMaxIdByOne()
+        {
+            MaxId -= 1;
+        }
     }
 }

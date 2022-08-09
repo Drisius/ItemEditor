@@ -174,6 +174,7 @@ namespace ItemEditor
                 this.editCreateItemMenuItem.Enabled = true;
                 this.editFindItemMenuItem.Enabled = true;
                 this.editCreateMissingItemsMenuItem.Enabled = true;
+                this.editDeleteLastItemMenuItem.Enabled = true;
                 this.viewShowOnlyMismatchedMenuItem.Enabled = true;
                 this.viewShowDecaptedItemsMenuItem.Enabled = true;
                 this.viewUpdateItemsListMenuItem.Enabled = true;
@@ -312,6 +313,7 @@ namespace ItemEditor
             this.EditItem(item);
             this.editDuplicateItemMenuItem.Enabled = true;
             this.editReloadItemMenuItem.Enabled = true;
+            this.editDeleteLastItemMenuItem.Enabled = true;
             this.optionsGroupBox.Enabled = true;
             this.appearanceGroupBox.Enabled = true;
             this.serverItemListBox.SelectedIndex = index;
@@ -807,6 +809,23 @@ namespace ItemEditor
             Buffer.BlockCopy(item.SpriteHash, 0, copy.SpriteHash, 0, copy.SpriteHash.Length);
             return copy;
         }
+
+        private void DeleteLastItem()
+        {
+            if (this.ServerItems.MaxId == 100)
+            {
+                return;
+            }
+            ServerItem item = this.ServerItems.Items.Find(i => i.ID == ServerItems.MaxId);
+            this.ServerItems.Items.Remove(item);
+            this.ServerItems.LowerMaxIdByOne();
+            this.BuildItemsListBox();
+        }
+
+        //private void DeleteItem(ServerItem item)
+        //{
+        //    item = null;
+        //}
 
         private bool LoadClient(Plugin plugin, uint otbVersion)
         {
@@ -1363,6 +1382,11 @@ namespace ItemEditor
         private void EditReloadItemMenuItem_Click(object sender, EventArgs e)
         {
             this.ReloadSelectedItem();
+        }
+
+        private void EditDeleteLastItemMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DeleteLastItem();
         }
 
         private void EditCreateMissingItemsMenu_Click(object sender, EventArgs e)
